@@ -2,7 +2,7 @@
 """
 Cloud Environment Detector for ARACHNE
 Detects AWS, Azure, GCP, DigitalOcean, and other cloud platforms
-AUTHOR: Rogue Red Team
+AUTHOR: Arachne Red Team
 """
 
 import os, sys, subprocess, json, requests, socket, re
