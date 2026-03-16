@@ -215,7 +215,7 @@ Want to serve payloads outside your local network? Nyx supports [Ngrok](https://
 1. Download Ngrok for Linux:
 
    ```bash
-   cd ~/Jam_fi
+   cd ~/Nyx
    wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip
    unzip ngrok-stable-linux-amd64.zip
    chmod +x ngrok
