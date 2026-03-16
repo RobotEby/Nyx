@@ -14,7 +14,7 @@ if not os.path.isdir("loot"):
 
 def require_root():
     if os.geteuid() != 0:
-        print("⚠️ Jam_Fi must be run as root.")
+        print("⚠️ Arachne must be run as root.")
         sys.exit(1)
 
 def cleanup_services(iface=None):
