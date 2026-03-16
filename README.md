@@ -1,4 +1,4 @@
-# Arachne – Wi-Fi Chaos Tool
+# Nyx – Wi-Fi Chaos Tool
 
 ![RobotEby Banner](https://img.shields.io/badge/RobotEby-certified_ethcial_hacker-blue)
 
@@ -6,9 +6,9 @@
 
 ![image](assets/image.png)
 
-## What is Arachne?
+## What is Nyx?
 
-Arachne is an offensive wireless toolkit for Kali Linux, built for red team simulation, network disruption research, and Wi-Fi exploitation education. It includes modules for:
+Nyx is an offensive wireless toolkit for Kali Linux, built for red team simulation, network disruption research, and Wi-Fi exploitation education. It includes modules for:
 
 - Deauthentication attacks
 - WPA handshake capture and cracking
@@ -28,8 +28,8 @@ DISCLAIMER : All features are designed for local lab use and legal environments 
 Clone the repository
 
 ```bash
-git clone https://github.com/RobotEby/Arachne.git
-cd Arachne
+git clone https://github.com/RobotEby/Nyx.git
+cd Nyx
 ```
 
 Install dependencies
@@ -60,13 +60,13 @@ ngrok config add-authtoken <YOUR_NGROK_AUTH_TOKEN>
 Run the tool:
 
 ```bash
-sudo python3 arachne.py
+sudo python3 Nyx.py
 ```
 
 To update later:
 
 ```bash
-cd Arachne
+cd Nyx
 git pull
 ```
 
@@ -74,7 +74,7 @@ git pull
 
 ## Interface Modes: Monitor vs Managed
 
-Some Arachne modules require **monitor mode**, while others require **managed mode**.
+Some Nyx modules require **monitor mode**, while others require **managed mode**.
 
 ### Monitor Mode (e.g. wlan0mon)
 
@@ -118,7 +118,7 @@ sudo systemctl start NetworkManager
 
 ---
 
-## Arachne Modules Overview
+## Nyx Modules Overview
 
 Each module appears in the menu
 
@@ -148,14 +148,14 @@ Descriptions
 - **Karma Responder** – Replies to probe requests with fake beacons.
 - **Chaos Mode** – Combines probe spam, junk flood, and karma attack.
 - **View Loot** – Shows saved handshakes and credentials in `loot/`.
-- **Evil AP** – Launches a arachne access point with credential logging and DNS spoofing.
+- **Evil AP** – Launches a Nyx access point with credential logging and DNS spoofing.
 - **MITM HID Injection** – Serve payloads + log keystrokes via HTML/JS.
 
 ---
 
 ## The `loot/` Folder
 
-Arachne logs data, HTML, and attack files to `loot/`:
+Nyx logs data, HTML, and attack files to `loot/`:
 
 | File                  | Purpose                                 |
 | --------------------- | --------------------------------------- |
@@ -190,7 +190,7 @@ Add real payloads here! These get served by the MITM module:
 
 ## MITM HID Injection Overview
 
-When you choose option `11` in Arachne:
+When you choose option `11` in Nyx:
 
 - Broadcasts a fake SSID using beacon spoofing
 - Clients connect and are served `injection.html`
@@ -202,13 +202,13 @@ When you choose option `11` in Arachne:
 All files are served from:
 `http://10.0.0.1`
 
-To add your own payloads, drop them into the `payloads/` folder. Arachne will automatically load and offer them during MITM mode.
+To add your own payloads, drop them into the `payloads/` folder. Nyx will automatically load and offer them during MITM mode.
 
 ---
 
 ## Ngrok Setup (for Remote Payload Delivery)
 
-Want to serve payloads outside your local network? Arachne supports [Ngrok](https://ngrok.com) for public tunnels.
+Want to serve payloads outside your local network? Nyx supports [Ngrok](https://ngrok.com) for public tunnels.
 
 ### Setup Instructions
 
@@ -226,7 +226,7 @@ Want to serve payloads outside your local network? Arachne supports [Ngrok](http
    ./ngrok config add-authtoken YOUR_AUTHTOKEN
    ```
 
-That’s it! When you launch MITM Mode and choose Ngrok, Arachne will automatically:
+That’s it! When you launch MITM Mode and choose Ngrok, Nyx will automatically:
 
 - Start a public tunnel on port 80
 - Rewrite your HTML files to use `https://<your-ngrok>.ngrok-free.app`
@@ -258,7 +258,7 @@ Captured credentials are logged to `loot/creds.txt`.
 
 ## Disclaimer
 
-Arachne is provided for **educational and authorized security research only**.
+Nyx is provided for **educational and authorized security research only**.
 
 Do not use this tool against networks or devices you do not own or have permission to test.
 
@@ -268,6 +268,6 @@ Use responsibly, ethically, and within legal boundaries.
 
 ## About
 
-Arachne is an open-source red team utility developed by [@RobotEby](https://github.com/RobotEby).
+Nyx is an open-source red team utility developed by [@RobotEby](https://github.com/RobotEby).
 
 If you find it useful, consider starring the repo and contributing responsibly.
